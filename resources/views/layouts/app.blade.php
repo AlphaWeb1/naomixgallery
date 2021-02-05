@@ -14,12 +14,11 @@
     @include('layouts.style')
 </head>
 <body>
-    <main class="main-wrapper main-wrapper--offset">
-        @include('layouts.header')
-		<div class="content-wrapper oh">
-            @yield('content')
-            @include('layouts.footer')
-        </div>
+    <main class="main-wrapper @if (in_array(request()->path(), array('none'))) main-wrapper--offset @endif">
+        @section('header')
+            @include('layouts.header')
+        @show
+        @yield('content')
     </main>
     @include('layouts.script')
 </body>

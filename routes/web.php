@@ -19,7 +19,15 @@ use Illuminate\Support\Facades\Route;
 // });
 
 /** Auth Routes */
-Auth::routes();
+// Auth::routes();
+
+Auth::routes(['verify' => true]);
+
+Route::get('/register', function(){
+    return redirect('/home');
+});
+Route::get('/admin-logout', 'App\Http\Controllers\Root\RootController@logout');
+Route::get('/admin', 'App\Http\Controllers\Auth\LoginController@admin');
 
 /** Guest Routes */
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -42,5 +50,7 @@ Route::post('/newsletter', 'App\Http\Controllers\HomeController@newsletter');
 Route::get('/unsubscribe-newsletter/{email}', 'App\Http\Controllers\HomeController@unsubscripe_newsletter');
 
 /** Admin Routes */
+Route::get('/root', 'App\Http\Controllers\Root\RootController@index');
+Route::get('/root/home', 'App\Http\Controllers\Root\RootController@index');
 
 /** Client Routes */

@@ -4,6 +4,7 @@
 <script src="{{asset(config('app.public_prefix').'assets/js/plugins.js')}}"></script>
 <script src="{{asset(config('app.public_prefix').'assets/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
 <script src="{{asset(config('app.public_prefix').'assets/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script src="{{asset(config('app.public_prefix').'assets/js/rev-slider.js')}}"></script>
 
 <script src="{{asset(config('app.public_prefix').'assets/js/scripts.js')}}"></script>
 
@@ -19,4 +20,5 @@
 <script src="{{asset(config('app.public_prefix').'assets/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
 <script src="{{asset(config('app.public_prefix').'assets/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
 <script type="text/javascript">
+
 </script>
