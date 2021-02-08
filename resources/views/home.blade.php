@@ -95,7 +95,7 @@
                             <ul class="service-1__features">
                                 <li class="service-1__feature">
                                     <i class="ui-check service-1__feature-icon"></i>
-                                    <span class="service-1__feature-text">MoGallery Collection</span>
+                                    <span class="service-1__feature-text">Gallery Collection</span>
                                 </li>
                                 <li class="service-1__feature">
                                     <i class="ui-check service-1__feature-icon"></i>
@@ -103,8 +103,12 @@
                                 </li>
                                 <li class="service-1__feature">
                                     <i class="ui-check service-1__feature-icon"></i>
-                                    <span class="service-1__feature-text">Portraiture</span>
+                                    <span class="service-1__feature-text">Portraits</span>
                                 </li>
+                                    <li class="service-1__feature">
+                                        <i class="ui-check service-1__feature-icon"></i>
+                                        <span class="service-1__feature-text">Abstract</span>
+                                    </li>
                             </ul>
                         </div>
                     </div>
@@ -191,7 +195,7 @@
                 <div class="project-1">
                     <div class="project-1__container">
                         <div class="project__img-holder hover-scale">
-                            <a href="/gallery/portrauture">
+                            <a href="/gallery/portraits">
                                 <img src="{{asset(config('app.public_prefix').'assets/images/gallery/portraiture/1.jpg')}}" alt="" class="project__img">
                             </a>
                         </div>
@@ -199,9 +203,9 @@
 
                     <div class="project-1__description-holder">
                         <div class="project-1__description">
-                            <h3 class="project-1__title">Portraiture</h3>
+                            <h3 class="project-1__title">Portraits</h3>
                             <p class="project-1__text">Neo @6Months, oil on canvas, 16 x 18 inches, 2019</p>
-                            <a href="/gallery/portrauture?id=1" class="read-more">
+                            <a href="/gallery/portraits?id=1" class="read-more">
                                 <span class="read-more__text">Explore</span>
                                 <i class="ui-arrow-right read-more__icon"></i>
                             </a>
@@ -317,7 +321,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-12 col-md-12 text-center">
+                <div class="col-lg-12 col-md-12 text-center mb-8">
                     <a href="/store" class="read-more">
                         <span class="read-more__text">Explore</span>
                         <i class="ui-arrow-right read-more__icon"></i>

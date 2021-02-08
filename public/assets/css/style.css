@@ -1576,6 +1576,7 @@ textarea.material__input {
   background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
+  padding: 0.3rem;
 }
 
 .card-row > div {
@@ -1608,7 +1609,9 @@ textarea.material__input {
   font-size: 16px;
   margin-bottom: 0;
 }
-
+.card__bordered {
+  border: 0.2px solid #333333;
+}
 /*-------------------------------------------------------*/
 /* Magnific Pupop
 /*-------------------------------------------------------*/
@@ -5651,6 +5654,20 @@ dd {
 
 .pb-80 {
   padding-bottom: 80px;
+}
+.text-dark-em{
+  color: #222222 !important;
+}
+.progress{
+  background: #c2c2c2;
+  margin: 1rem;
+}
+.progress-bar{
+  text-align: center;
+  padding: 0.3rem;
+}
+.font-weight-bold {
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 1199px) {

@@ -39,7 +39,7 @@ Route::get('/murals', 'App\Http\Controllers\HomeController@murals');
 Route::get('/gallery', 'App\Http\Controllers\HomeController@gallery');
 Route::get('/gallery/connections', 'App\Http\Controllers\HomeController@gallery_collections');
 Route::get('/gallery/miniature', 'App\Http\Controllers\HomeController@miniature');
-Route::get('/gallery/portraiture', 'App\Http\Controllers\HomeController@portraiture');
+Route::get('/gallery/portraits', 'App\Http\Controllers\HomeController@portraits');
 // Route::get('/gallery/testiminials', 'App\Http\Controllers\HomeController@testiminials');
 Route::get('/artist-profile', 'App\Http\Controllers\HomeController@artist_profile');
 Route::get('/new-store', 'App\Http\Controllers\HomeController@store');
@@ -54,3 +54,6 @@ Route::get('/root', 'App\Http\Controllers\Root\RootController@index');
 Route::get('/root/home', 'App\Http\Controllers\Root\RootController@index');
 
 /** Client Routes */
+Route::get('/dashboard', function(){
+    return redirect('/root');
+})->middleware(['auth', 'user.auth']);

@@ -71,7 +71,7 @@
                                 <ul class="service-1__features">
                                     <li class="service-1__feature">
                                         <i class="ui-check service-1__feature-icon"></i>
-                                        <span class="service-1__feature-text">MoGallery Collection</span>
+                                        <span class="service-1__feature-text">Gallery Collection</span>
                                     </li>
                                     <li class="service-1__feature">
                                         <i class="ui-check service-1__feature-icon"></i>
@@ -79,7 +79,11 @@
                                     </li>
                                     <li class="service-1__feature">
                                         <i class="ui-check service-1__feature-icon"></i>
-                                        <span class="service-1__feature-text">Portraiture</span>
+                                        <span class="service-1__feature-text">Portraits</span>
+                                    </li>
+                                    <li class="service-1__feature">
+                                        <i class="ui-check service-1__feature-icon"></i>
+                                        <span class="service-1__feature-text">Abstract</span>
                                     </li>
                                 </ul>
                             </div>

@@ -54,9 +54,6 @@ class RootController extends Controller
     public function logout(Request $request)
     {
         $user = auth()->user();
-        // ActivityLogger::log($user, 
-        // "$user->firstname ($user->email) logged out.", 
-        // "logout", "/root/user/$user->email");
 
         $sess = Session::flush();
         Auth::guard()->logout();

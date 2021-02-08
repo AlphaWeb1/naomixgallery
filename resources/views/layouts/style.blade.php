@@ -8,10 +8,10 @@
 <link rel="stylesheet" href="{{ asset(config('app.public_prefix').'assets/css/style.css') }}" />
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="{{ asset(config('app.public_prefix').'assets/images/logo/logo.svg') }}">
-<link rel="apple-touch-icon" href="{{ asset(config('app.public_prefix').'assets/images/logo/logo.png') }}">
-<link rel="apple-touch-icon" sizes="72x72" href="{{ asset(config('app.public_prefix').'assets/images/logo/logo.png') }}">
-<link rel="apple-touch-icon" sizes="114x114" href="{{ asset(config('app.public_prefix').'assets/images/logo/logo.png') }}">
+<link rel="shortcut icon" href="{{ asset(config('app.public_prefix').'assets/images/logo/icon-logo.png') }}">
+<link rel="apple-touch-icon" href="{{ asset(config('app.public_prefix').'assets/images/logo/icon-logo.png') }}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ asset(config('app.public_prefix').'assets/images/logo/icon-logo.png') }}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ asset(config('app.public_prefix').'assets/images/logo/icon-logo.png') }}">
 <style>
     .py--15{
         padding-top: 15px;
