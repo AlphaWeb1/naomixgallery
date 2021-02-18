@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateExhibitionItemsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('exhibition_items', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->unsignedBigInteger('exhibition_id');
+            $table->string('size')->nullable();
+            $table->string('medium')->nullable();
+            $table->text('description')->nullable();
+            $table->string('path');
+            $table->string('media_type')->default('image'); //image, video
+            $table->unsignedBigInteger('user_id');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('exhibition_items');
+    }
+}

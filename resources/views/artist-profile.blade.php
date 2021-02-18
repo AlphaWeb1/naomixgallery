@@ -126,8 +126,8 @@
                                             <i class="ui-tags"></i>
                                             <span class="entry__tags-label">Tags:</span>
                                             <a href="#" rel="tag">Art, </a>
-                                            <a href="#" rel="tag">Gallery, </a>
-                                            <a href="#" rel="tag">Exhibitions</a>
+                                            <a href="/gallery" rel="tag">Gallery, </a>
+                                            <a href="/exhibitions" rel="tag">Exhibitions</a>
                                         </div>
                                         <!-- end tags -->
                             
@@ -142,7 +142,6 @@
             </div>
         </div>
     </section>
-
-
+    @include('layouts.footer')
 </div>
 @endsection

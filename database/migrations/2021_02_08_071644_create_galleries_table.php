@@ -23,7 +23,7 @@ class CreateGalleriesTable extends Migration
             $table->text('description')->nullable();
             $table->string('path');
             $table->string('media_type')->default('image'); //image, video
-            $table->addedby('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

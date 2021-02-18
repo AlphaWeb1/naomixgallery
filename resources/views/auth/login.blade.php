@@ -16,8 +16,8 @@
                         <div class="card-body">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="form-group">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" 
+                                <div class="material__form-group form-group">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror material__input" name="email" 
                                     value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <label for="email" class="material__label">{{ __('E-Mail Address') }}
                                         <abbr title="required" class="required">*</abbr>
@@ -30,8 +30,8 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" 
+                                <div class="material__form-group form-group">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror material__input" name="password" 
                                     required autocomplete="current-password">
                                     <label for="password" class="material__label">{{ __('Password') }}
                                         <abbr title="required" class="required">*</abbr>
@@ -44,7 +44,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
+                                <div class="material__form-group form-group">
                                     <div class="form-check mb-8">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-0">
+                                <div class="material__form-group form-group mb-0">
                                     <button type="submit" class="btn btn--lg btn--color btn--button btn--primary">
                                         {{ __('Login') }}
                                     </button>

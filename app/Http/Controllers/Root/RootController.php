@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 use Session;
 
 class RootController extends Controller
-{
-    
+{    
     public function __construct()
     {
         $this->middleware(['auth', 'admin.auth', 'verified']);

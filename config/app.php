@@ -40,6 +40,19 @@ return [
     */
 
     'public_prefix' => '',
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Application Storage App Placeholder
+    |--------------------------------------------------------------------------
+    |
+    | This varaiable holds a prefix base path to uploaded files via the application execution 
+    | by the translation service provider. You are free to set this value
+    | to any of the locales which will be supported by the application.
+    |
+    */
+
+    'storage_prefix' => '',
 
     /*
     |--------------------------------------------------------------------------

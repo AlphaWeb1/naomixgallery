@@ -49,7 +49,7 @@
                         <div class="socials text-lg-center">
                             <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter font-27"></i></a>
                             <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook font-27"></i></a>
-                            <a href="#" class="social social-youtube d-none" aria-label="youtube" title="youtube" target="_blank"><i class="ui-youtube font-27"></i></a>
+                            <a href="https://wa.me/+2347030555625" class="social social-whatsapp d-none" aria-label="youtube" title="whatsapp" target="_blank"><i class="ui-whatsapp font-27"></i></a>
                             <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram font-27"></i></a>
                         </div>
                     </div>

@@ -30,25 +30,25 @@
         <div class="row">
             <div class="col-md-3">
             <div class="statistic">
-                <span class="statistic__number">461</span>
+                <span class="statistic__number">{{ $summary->product }}</span>
                 <h5 class="statistic__title">In Store</h5>
             </div>
             </div>
             <div class="col-md-3">
             <div class="statistic">
-                <span class="statistic__number">290</span>
+                <span class="statistic__number">{{ $summary->exhibition }}</span>
                 <h5 class="statistic__title">Exhibitions</h5>
             </div>
             </div>
             <div class="col-md-3">
             <div class="statistic">
-                <span class="statistic__number">45</span>
+                <span class="statistic__number">{{ $summary->gallery }}</span>
                 <h5 class="statistic__title">Gallery</h5>
             </div>
             </div>
             <div class="col-md-3">
             <div class="statistic">
-                <span class="statistic__number">36</span>
+                <span class="statistic__number">{{ $summary->mural }}</span>
                 <h5 class="statistic__title">Mural</h5>
             </div>
             </div>
@@ -64,11 +64,18 @@
                 <div class="col-xl-4 col-lg-6">
                     <div class="service-1">
                         <a href="#" class="service-1__url hover-scale">
-                            <img src="{{asset(config('app.public_prefix').'assets/images/exhibition/2.jpg')}}" class="service-1__img" alt="">
+                            <img src="{{asset( !empty($exhibitions[0]->first_item->path) ? config('app.storage_prefix').$exhibitions[0]->first_item->path : 
+                                config('app.public_prefix').'assets/images/exhibition/2.jpg') }}" class="service-1__img" alt="">
                         </a>								
                         <div class="service-1__info">
                             <h3 class="service-1__title">Exhibitions</h3>
                             <ul class="service-1__features">
+                                @forelse($exhibitions as $exhibition)
+                                <li class="service-1__feature">
+                                    <i class="ui-check service-1__feature-icon"></i>
+                                    <span class="service-1__feature-text">{{ $exhibition->year }}, {{ $exhibition->title }}...</span>
+                                </li>
+                                @empty
                                 <li class="service-1__feature">
                                     <i class="ui-check service-1__feature-icon"></i>
                                     <span class="service-1__feature-text">2019, When Thought Becomes Reality, SNA October Rain Exhibition...</span>
@@ -81,6 +88,7 @@
                                     <i class="ui-check service-1__feature-icon"></i>
                                     <span class="service-1__feature-text">2019, Uncovered Female Nigerian Artists, British Club British Village Inn, Abuja.</span>
                                 </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>
@@ -88,7 +96,8 @@
                 <div class="col-xl-4 col-lg-6">
                     <div class="service-1">
                         <a href="#" class="service-1__url hover-scale">
-                            <img src="{{asset(config('app.public_prefix').'assets/images/gallery/collections/2.jpg')}}" class="service-1__img" alt="">
+                            <img src="{{asset( !empty($galleries->collection->path) ? config('app.storage_prefix').$galleries->collection->path : 
+                            config('app.public_prefix').'assets/images/gallery/collections/2.jpg' )}}" class="service-1__img" alt="">
                         </a>								
                         <div class="service-1__info">
                             <h3 class="service-1__title">Gallery</h3>
@@ -116,11 +125,18 @@
                 <div class="col-xl-4 col-lg-6">
                     <div class="service-1">
                         <a href="#" class="service-1__url hover-scale">
-                            <img src="{{asset(config('app.public_prefix').'assets/images/mural/1.jpg')}}" class="service-1__img" alt="">
+                            <img src="{{asset( !empty($murals[0]->path) ? config('app.storage_prefix').$murals[0]->path : 
+                                config('app.public_prefix').'assets/images/mural/1.jpg' )}}" class="service-1__img" alt="">
                         </a>								
                         <div class="service-1__info">
                             <h3 class="service-1__title">Mural</h3>
                             <ul class="service-1__features">
+                                @forelse($murals as $mural)
+                                <li class="service-1__feature">
+                                    <i class="ui-check service-1__feature-icon"></i>
+                                    <span class="service-1__feature-text">{{ $mural->year }}, {{ $mural->title }}...</span>
+                                </li>
+                                @empty
                                 <li class="service-1__feature">
                                     <i class="ui-check service-1__feature-icon"></i>
                                     <span class="service-1__feature-text">2019, Creation of fashion illustrations on the walls...</span>
@@ -133,6 +149,7 @@
                                     <i class="ui-check service-1__feature-icon"></i>
                                     <span class="service-1__feature-text">2017, Participation in the creation of the Ojodu-Berger Bridge mural...</span>
                                 </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>
@@ -153,17 +170,20 @@
                 <div class="project-1">
                     <div class="project-1__container">
                         <div class="project__img-holder hover-scale">
-                            <a href="/gallery/gallery-collection">
-                                <img src="{{asset(config('app.public_prefix').'assets/images/gallery/collections/1.jpg')}}" alt="" class="project__img">
+                            <a href="/gallery/{{'collection'}}">
+                                <img src="{{asset( !empty($galleries->collection->path) ? config('app.storage_prefix').$galleries->collection->path : 
+                                config('app.public_prefix').'assets/images/gallery/collections/1.jpg' )}}" alt="" class="project__img">
                             </a>
                         </div>
                     </div>
                     <div class="project-1__description-holder">
                         <div class="project-1__description">
-                            <h3 class="project-1__title">Gallery Collection (The Best Teacher)</h3>
-                            <p class="project-1__text">It is often said that there is no better teacher than life itself. The people we come across, circumstances we face, 
-                                situations we find ourselves and events that takes place in our lives are what shapes us with the lessons they taught us.</p>
-                            <a href="/gallery/gallery-collection?id=1" class="read-more">
+                            <h3 class="project-1__title">Gallery Collection ({{ $galleries->collection->title ?? 'The Best Teacher'}})</h3>
+                            <div class="project-1__text">
+                                {!! $galleries->collection->description_decode ?? 'It is often said that there is no better teacher than life itself. The people we come across, circumstances we face, 
+                                situations we find ourselves and events that takes place in our lives are what shapes us with the lessons they taught us.' !!}
+                            </div>
+                            <a href="/gallery/{{!empty($galleries->collection->path) ? 'detail/'.$galleries->collection->id : 'collection'}}" class="read-more">
                                 <span class="read-more__text">Explore</span>
                                 <i class="ui-arrow-right read-more__icon"></i>
                             </a>
@@ -174,8 +194,9 @@
                 <div class="project-1">
                     <div class="project-1__container">
                         <div class="project__img-holder hover-scale">
-                            <a href="/gallery/miniature">
-                                <img src="{{asset(config('app.public_prefix').'assets/images/gallery/miniature/1.jpg')}}" alt="" class="project__img">
+                            <a href="/gallery/{{'miniature'}}">
+                                <img src="{{asset( !empty($galleries->miniature->path) ? config('app.storage_prefix').$galleries->miniature->path : 
+                                config('app.public_prefix').'assets/images/gallery/miniature/1.jpg')}}" alt="" class="project__img">
                             </a>
                         </div>
                     </div>
@@ -183,8 +204,10 @@
                     <div class="project-1__description-holder">
                         <div class="project-1__description">
                             <h3 class="project-1__title">Miniature</h3>
-                            <p class="project-1__text">Abundance MEDIUM oil on canvas, 20 x 24 inches, EAR 2017.</p>
-                            <a href="/gallery/miniature?id=1" class="read-more">
+                            <div class="project-1__text">
+                            {!! $galleries->miniature->description_decode ?? 'Abundance, oil on canvas, 20 x 24 inches, 2017.' !!}
+                            </div>
+                            <a href="/gallery/{{!empty($galleries->miniature->path) ? 'detail/'.$galleries->miniature->id : 'miniature'}}" class="read-more">
                                 <span class="read-more__text">Explore</span>
                                 <i class="ui-arrow-right read-more__icon"></i>
                             </a>
@@ -195,8 +218,9 @@
                 <div class="project-1">
                     <div class="project-1__container">
                         <div class="project__img-holder hover-scale">
-                            <a href="/gallery/portraits">
-                                <img src="{{asset(config('app.public_prefix').'assets/images/gallery/portraiture/1.jpg')}}" alt="" class="project__img">
+                            <a href="/gallery/{{'portrait'}}">
+                                <img src="{{asset( !empty($galleries->portrait->path) ? config('app.storage_prefix').$galleries->portrait->path : 
+                                config('app.public_prefix').'assets/images/gallery/portraiture/1.jpg')}}" alt="" class="project__img">
                             </a>
                         </div>
                     </div>
@@ -204,8 +228,33 @@
                     <div class="project-1__description-holder">
                         <div class="project-1__description">
                             <h3 class="project-1__title">Portraits</h3>
-                            <p class="project-1__text">Neo @6Months, oil on canvas, 16 x 18 inches, 2019</p>
-                            <a href="/gallery/portraits?id=1" class="read-more">
+                            <div class="project-1__text">
+                                {!! $galleries->portrait->description_decode ?? 'Neo @6Months, oil on canvas, 16 x 18 inches, 2019' !!}
+                            </div>
+                            <a href="/gallery/{{!empty($galleries->portrait->path) ? 'detail/'.$galleries->portrait->id : 'portrait'}}" class="read-more">
+                                <span class="read-more__text">Explore</span>
+                                <i class="ui-arrow-right read-more__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> <!-- end project -->
+
+                <div class="project-1">
+                    <div class="project-1__container">
+                        <div class="project__img-holder hover-scale">
+                            <a href="/gallery/{{'abstract'}}">
+                                <img src="{{asset( !empty($galleries->abstract->path) ? config('app.storage_prefix').$galleries->abstract->path : 
+                                config('app.public_prefix').'assets/images/gallery/abstract/1.jpg')}}" alt="" class="project__img">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-1__description-holder">
+                        <div class="project-1__description">
+                            <h3 class="project-1__title">Abstract</h3>
+                            <div class="project-1__text">
+                                {!! $galleries->abstract->description_decode ?? 'Chill, oil on canvas, 20 x 24 inches, 2020.' !!}</div>
+                            <a href="/gallery/{{!empty($galleries->abstract->path) ? 'detail/'.$galleries->abstract->id : 'abstract'}}" class="read-more">
                                 <span class="read-more__text">Explore</span>
                                 <i class="ui-arrow-right read-more__icon"></i>
                             </a>
@@ -225,27 +274,25 @@
             </div>
             <article class="entry">
                 <div class="entry__img-holder">
-                    <a href="/exhibition/1">
-                    <img src="{{asset(config('app.public_prefix').'assets/images/exhibition/1.jpg')}}" class="entry__img" alt="">
+                    <a href="/exhibition/{{$exhibitions[0]->id}}">
+                        <img src="{{asset( !empty($exhibitions[0]->first_item->path) ? config('app.storage_prefix').$exhibitions[0]->first_item->path : 
+                        config('app.public_prefix').'assets/images/exhibition/1.jpg')}}" class="entry__img" alt="">
                     </a>
                 </div>
                 <div class="entry__body text-center">
                     <ul class="entry__meta">
-                    <li class="entry__meta-date">
-                        <span>October 2019</span>
-                    </li>
-                    <li class="entry__meta-author">
-                        <a href="#">Freedom Park</a>
-                    </li>
-                    <li class="entry__meta-category">
-                        <a href="#">Lagos Island</a>
-                    </li>
+                        <li class="entry__meta-date">
+                            <span>{{$exhibitions[0]->year}}</span>
+                        </li>
+                        <li class="entry__meta-author">
+                            <a href="#">{{$exhibitions[0]->location}}</a>
+                        </li>
                     </ul>
                     <h2 class="entry__title">
-                    <a href="/exhibition/1">2019, When Thought Becomes Reality, SNA October Rain Exhibition</a>
+                        <a href="/exhibition{{ !empty($exhibitions[0]->id) ? '/'.$exhibitions[0]->id : 's'}}">{{$exhibitions[0]->year}}, {{$exhibitions[0]->title}}, SNA October Rain Exhibition</a>
                     </h2>
                     <div class="entry__excerpt">
-                    <p></p>
+                        {!! $exhibitions[0]->description_decode !!}
                     </div>
                     <a href="/exhibitions" class="read-more">
                     <span class="read-more__text">Explore</span>
@@ -263,65 +310,42 @@
                 <p class="subtitle d-none">Portfolio</p>
                 <h2 class="section-title">New Store</h2>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
+                @forelse($products as $product)
                 <div class="col-lg-4 col-md-6">
                     <article class="entry">
                         <div class="entry__img-holder">
-                            <a href="/store">
-                                <img src="{{asset(config('app.public_prefix').'assets/images/store/1.png')}}" class="entry__img" alt="">
+                            <a href="/store/{{$product->id}}">
+                                <img src="{{ asset(config('app.storage_prefix').$product->path) }}" class="entry__img" alt="{{ $product->title }}">
                             </a>
                         </div>
-                        <div class="entry__body">
-                            <ul class="entry__meta d-none">
+                        <div class="entry__body text-center">
+                            <ul class="entry__meta">
+                                @if(!empty($product->size))
                                 <li class="entry__meta-date">
-                                    <span>13 June 2018</span>
+                                    <span>{{ $product->size }}</span>
                                 </li>
+                                @endif
+                                @if(!empty($product->amount))
+                                    <li class="entry__meta-date">
+                                        <span>₦ {{ number_format($product->amount, 2, '.', ',') }}</span>
+                                    </li>
+                                @endif
                             </ul>
+                            @if(!empty($product->title))
                             <h2 class="entry__title">
-                                <a href="/store/1">Product Name</a>
+                                <a href="/store/{{$product->id}}">{{ $product->title }}</a>
                             </h2>
+                            @endif
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="entry">
-                        <div class="entry__img-holder">
-                            <a href="/store">
-                                <img src="{{asset(config('app.public_prefix').'assets/images/store/2.png')}}" class="entry__img" alt="">
-                            </a>
-                        </div>
-                        <div class="entry__body">
-                            <ul class="entry__meta d-none">
-                                <li class="entry__meta-date">
-                                    <span>13 June 2018</span>
-                                </li>
-                            </ul>
-                            <h2 class="entry__title">
-                                <a href="store/2">Product Name</a>
-                            </h2>
-                        </div>
-                    </article>
+                @empty
+                <div class="col-lg-8 col-md-10">
+                    <p>Store is currently empty</p>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="entry">
-                        <div class="entry__img-holder">
-                            <a href="/store">
-                                <img src="{{asset(config('app.public_prefix').'assets/images/store/3.png')}}" class="entry__img" alt="">
-                            </a>
-                        </div>
-                        <div class="entry__body">
-                            <ul class="entry__meta d-none">
-                                <li class="entry__meta-date">
-                                    <span>13 June 2018</span>
-                                </li>
-                            </ul>
-                            <h2 class="entry__title">
-                                <a href="/store/3">Product Name</a>
-                            </h2>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-lg-12 col-md-12 text-center mb-8">
+                @endforelse
+                <div class="col-lg-12 col-md-12 text-center mb-24">
                     <a href="/store" class="read-more">
                         <span class="read-more__text">Explore</span>
                         <i class="ui-arrow-right read-more__icon"></i>

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="footer bg-dark-overlay" style="background-image: url({{ asset(config('app.public_prefix').'assets/img/footer/1.jpg)') }};">
+<footer class="footer bg-dark-overlay dash-footer" style="background-image: url({{ asset(config('app.public_prefix').'assets/img/footer/1.jpg)') }};">
     <div class="footer__bottom pb-16">
         <div class="container-fluid text-center">
             <span class="copyright">

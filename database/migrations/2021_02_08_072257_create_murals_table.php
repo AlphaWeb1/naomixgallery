@@ -16,14 +16,13 @@ class CreateMuralsTable extends Migration
         Schema::create('murals', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            // $table->string('category'); // abstract, miniature, portrait, collection
             $table->string('company')->nullable();
             $table->string('size')->nullable();
             $table->string('year')->nullable();
             $table->text('description')->nullable();
             $table->string('path');
             $table->string('media_type'); //image, video
-            $table->addedby('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

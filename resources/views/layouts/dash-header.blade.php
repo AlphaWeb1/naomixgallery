@@ -30,7 +30,7 @@
                             <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
                             <ul class="nav__dropdown-menu">
                                 <li><a href="/root/exhibitions">Exibitions</a></li><!--cruid,manage hide, show-->
-                                <li><a href="/root/exhibition-new">Add New Exhibition</a></li>
+                                <li class="d-none"><a href="/root/exhibition-new">Add New Exhibition</a></li>
                             </ul>
                         </li>
                         <li class="nav__dropdown">
@@ -40,25 +40,25 @@
                                 <li><a href="/root/gallery">All Gallery</a></li>
                                 <li><a href="/root/gallery?type=abstract">Abstract</a></li>
                                 <li><a href="/root/gallery?type=miniature">Miniature</a></li>
-                                <li><a href="/root/gallery?type=portraits">Portraits</a></li>
-                                <li><a href="/root/gallery?type=collections">Gallery Collection</a></li>
-                                <li><a href="/root/gallery-new">Add New Gallery</a></li>
+                                <li><a href="/root/gallery?type=portrait">Portraits</a></li>
+                                <li><a href="/root/gallery?type=collection">Gallery Collection</a></li>
+                                <li class="d-none"><a href="/root/gallery-new">Add New Gallery</a></li>
                             </ul>
                         </li>
                         <li class="nav__dropdown">
-                            <a href="/root/mural" aria-haspopup="true">Murals</a>
+                            <a href="/root/murals" aria-haspopup="true">Murals</a>
                             <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
                             <ul class="nav__dropdown-menu">
-                                <li><a href="/root/mural">Murals</a></li>
-                                <li><a href="/root/mural-new">Add New Mural</a></li>
+                                <li><a href="/root/murals">Murals</a></li>
+                                <li class="d-none"><a href="/root/mural-new">Add New Mural</a></li>
                             </ul>
                         </li>
                         <li class="nav__dropdown">
                             <a href="/root/store" aria-haspopup="true">Naomix Store</a>
                             <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
                             <ul class="nav__dropdown-menu">
-                                <li><a href="/root/store-new">Add New Product</a></li>
                                 <li><a href="/root/store">Products</a></li>
+                                <li class="d-none"><a href="/root/store-new">Add New Product</a></li>
                             </ul>
                         </li>
                         <li><a href="/admin-logout">Logout</a></li>

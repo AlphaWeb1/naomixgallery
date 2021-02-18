@@ -19,18 +19,10 @@ class ImageManager {
             "image/pjpeg", 
             "image/pjp", 
             "image/bmp", 
-            "image/svgz"
+            "image/svgz",
+            "application/octet-stream",
+            "application/xbm"
         );
-    }
-
-    public static function makePath($path, $type = 0777, $active = true)
-    {
-        $return = false;
-        if( !empty($path) && !file_exists($path) ){
-            mkdir($path, $type, $active);
-            $return = $path;
-        }
-        return $return;
     }
 
     public static function validateMime($file)
@@ -120,13 +112,9 @@ class ImageManager {
         return  $return_file;
     }
 
-    public static function isFile($file)
+    public static function isImage($file)
     {
-        return !empty($file) && is_file($file) && file_exists($file);
-    }
-
-    public static function isDir($file)
-    {
-        return !empty($file) && is_dir($file) && file_exists($file);
+        $is_image = in_array(strtolower(self::validateMime($file)) , self::getExtensions());
+        return $is_image;
     }
 }

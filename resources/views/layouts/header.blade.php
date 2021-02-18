@@ -69,7 +69,7 @@
                             <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
                             <ul class="nav__dropdown-menu">
                                 <li><a href="/gallery">Gallery</a></li>
-                                <li><a href="/mural">Mural</a></li>
+                                <li><a href="/murals">Mural</a></li>
                                 <li><a href="/exhibitions">Exhibitions</a></li>
                             </ul>
                         </li>
