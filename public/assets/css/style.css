@@ -1576,6 +1576,7 @@ textarea.material__input {
   background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
+  padding: 0.3rem;
 }
 
 .card-row > div {
@@ -1608,7 +1609,9 @@ textarea.material__input {
   font-size: 16px;
   margin-bottom: 0;
 }
-
+.card__bordered {
+  border: 0.2px solid #333333;
+}
 /*-------------------------------------------------------*/
 /* Magnific Pupop
 /*-------------------------------------------------------*/
@@ -2262,7 +2265,7 @@ img.mfp-img {
   display: inline-block;
   color: #222222;
   text-align: center;
-  margin-right: 30px;
+  margin-right: 25px;
   font-size: 18px;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -2583,7 +2586,8 @@ img.mfp-img {
 }
 
 .testimonial__author:after {
-  content: "/";
+  /* content: "/"; */
+  content: "";
   margin: 0 5px 0 9px;
 }
 
@@ -2763,7 +2767,7 @@ img.mfp-img {
 }
 
 .breadcrumbs__url {
-  color: #fff;
+  color: #080808;
 }
 
 .breadcrumbs__url:hover, .breadcrumbs__url:focus {
@@ -3934,7 +3938,7 @@ figcaption {
   font-weight: 700;
   color: #222222;
   font-size: 15px;
-  padding: 0 17px;
+  padding: 0 15px;
   line-height: 95px;
   display: block;
   position: relative;
@@ -4513,8 +4517,8 @@ header .flex-parent {
 }
 
 .nav__phone + .nav__socials {
-  padding-left: 44px;
-  margin-left: 44px;
+  padding-left: 35px;
+  margin-left: 35px;
   border-left: 1px solid #e5e5e5;
 }
 
@@ -4534,7 +4538,7 @@ header .flex-parent {
 }
 
 .nav__phone--mobile {
-  padding: 20px 0 8px;
+  padding: 10px 0 8px;
 }
 
 .nav__socials--mobile,
@@ -5651,6 +5655,20 @@ dd {
 .pb-80 {
   padding-bottom: 80px;
 }
+.text-dark-em{
+  color: #222222 !important;
+}
+.progress{
+  background: #c2c2c2;
+  margin: 1rem;
+}
+.progress-bar{
+  text-align: center;
+  padding: 0.3rem;
+}
+.font-weight-bold {
+  font-weight: 700;
+}
 
 @media only screen and (max-width: 1199px) {
   .mt-lg-0 {
@@ -6424,3 +6442,34 @@ dd {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* Custom Style */
+.list-no-bullet li{
+  list-style-type: none;
+}
+
+.header-logo{
+  width: 120px;
+}
+
+.font-27{
+  font-size: 27px;
+}
+
+.tp-caption.hero-text, .tp-caption.small-text {
+  color: #1b1a1a;
+  background: #ffffff7a;
+  padding: 15px !important;
+}
+
+.socials--base a.social-instagram {
+  background-color: #e84a3e;
+}
+.socials--base a.social-whatsapp {
+  background-color: #3ee848;
+}
+
+/* @media only screen and (max-width: 767px) {
+  .header-logo{
+
+  }
+} */

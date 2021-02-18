@@ -13,7 +13,7 @@
                 data-title="Sedona Theater"
                 >
                 <!-- MAIN IMAGE -->
-                <img src="{{asset(config('app.public_prefix').'assets/img/revolution/home-3/1.jpg')}}"
+                <img src="{{asset(config('app.public_prefix').'assets/images/home-slides/1.jpg')}}"
                     alt=""
                     data-bgrepeat="no-repeat"
                     data-bgfit="cover"
@@ -106,7 +106,7 @@
                 data-title="Sedona Theater"
                 >
                 <!-- MAIN IMAGE -->
-                <img src="{{asset(config('app.public_prefix').'assets/img/revolution/home-3/2.jpg')}}"
+                <img src="{{asset(config('app.public_prefix').'assets/images/home-slides/2.jpg')}}"
                     alt=""
                     data-bgrepeat="no-repeat"
                     data-bgfit="cover"
@@ -199,7 +199,7 @@
                 data-title="Sedona Theater"
                 >
                 <!-- MAIN IMAGE -->
-                <img src="{{asset(config('app.public_prefix').'assets/img/revolution/home-3/3.jpg')}}"
+                <img src="{{asset(config('app.public_prefix').'assets/images/home-slides/3.jpg')}}"
                     alt=""
                     data-bgrepeat="no-repeat"
                     data-bgfit="cover"

@@ -7,9 +7,10 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="widget widget-about-us">
                         <!-- Logo -->
-                        <a href="index.html" class="logo-container flex-child">
-                            <img class="logo" src="img/logo_white.png" srcset="{{ asset(config('app.public_prefix').'assets/img/logo_white.png') }} 1x, 
-                            {{ asset(config('app.public_prefix').'assets/img/logo_white@2x.png') }} 2x" alt="logo">
+                        <a href="/home" class="logo-container flex-child">
+                            <img class="logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}}" 
+                            srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}} 1x, 
+                            {{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}} 2x" alt="logo">
                         </a>
                     </div>
                 </div> <!-- end logo -->
@@ -17,10 +18,10 @@
                 <div class="col-lg-2 col-md-3">
                     <div class="widget widget_nav_menu">
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/about">Naomix Gallery Ltd</a></li>
+                            <li><a href="/exhibitions">Exhibitions</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/store">Store</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,20 +29,28 @@
                 <div class="col-lg-2 col-md-3">
                     <div class="widget widget_nav_menu">
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Career</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms &amp; Conditions</a></li>
+                            <li><a href="/faq">F.A.Q.</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-3 offset-lg-2 col-md-3">
+                <div class="col-lg-3 col-lg-offset-1 col-md-3">
                     <div class="widget">
-                        <div class="socials">
-                            <a href="#" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter"></i></a>
-                            <a href="#" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook"></i></a>
-                            <a href="#" class="social social-youtube" aria-label="youtube" title="google plus" target="_blank"><i class="ui-youtube"></i></a>
-                            <a href="#" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram"></i></a>
+                        <div class="socials mb-8 pull-left float-left">
+                            <span class="">Call us:</span>
+                            <a href="tel:+2347030555625" aria-label="contact-tel" title="contact-tel" target="_top"><i class="fa fa-telephone"></i> +2347030555625</a>
+                        </div>
+                        <div class="socials mb-8 pull-left float-left">
+                            <span>Email us:</span>
+                            <a href="mailto:naomixgallery@gmail.com" aria-label="contact-mail" title="contact-mail" target="_top">naomixgallery@gmail.com</a>
+                        </div>
+                        <div class="socials text-lg-center">
+                            <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter font-27"></i></a>
+                            <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook font-27"></i></a>
+                            <a href="https://wa.me/+2347030555625" class="social social-whatsapp d-none" aria-label="youtube" title="whatsapp" target="_blank"><i class="ui-whatsapp font-27"></i></a>
+                            <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram font-27"></i></a>
                         </div>
                     </div>
                 </div>
