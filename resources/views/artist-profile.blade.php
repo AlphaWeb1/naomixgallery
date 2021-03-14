@@ -70,7 +70,7 @@
                                                 <a href="tel:+2347030555625" class="social social-phone" aria-label="phone" title="Call Us" target="_top"><i class="ui-phone"></i>: +2347030555625</a>
                                             </li>
                                             <li>
-                                                <a href="https://wa.me/+2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i>: +2347030555625</a>
+                                                <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i>: +2347030555625</a>
                                             </li>
                                             <li>
                                                 <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i>: @naomixgallery</a>

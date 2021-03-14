@@ -9,6 +9,7 @@ use App\Models\Mural;
 use App\Models\Product;
 use App\Models\Exhibition;
 use App\Models\ExhibitionItem;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -134,7 +135,9 @@ class HomeController extends Controller
         foreach ($products as $product) {
             $product->description_decode = htmlspecialchars_decode($product->description);
         }
-        return view('store', compact("products"));
+        $categories = DB::select(DB::raw("SELECT DISTINCT category FROM products;"));
+        // dd($categories);
+        return view('store', compact("products", "categories"));
     }
 
     public function store_detail(Product $product, $id)
@@ -168,10 +171,12 @@ class HomeController extends Controller
         $validated = $request->validate([
             'contact_email' => ['required', 'string', 'email', 'max:255'],
             'contact_name' => ['required', 'string', 'min:2', 'max:255'],
-            'contact_phone' => ['required', 'string', 'max:11', 'regex:/^([0-9\s\-\+\(\)]*)$/'],
+            // 'contact_phone' => ['required', 'string', 'max:11', 'regex:/^([0-9\s\-\+\(\)]*)$/'],
             'contact_title' => ['required', 'string', 'max:20'],
             'contact_message' => ['required', 'string', 'max:255']
         ]);
+
+        // dd($request);
 
         $mail_data = (object) array(
             "send_from" => (object) array(
@@ -184,12 +189,12 @@ class HomeController extends Controller
             ),
             "logo" => (object) array(
                 "title" => 'Contact | '.config('app.name'),
-                "path" => config('app.url').config('app.port')."/".config('app.public_var').'assets/images/logos/logo.png'
+                "path" => config('app.url').config('app.port')."/".config('app.public_prefix').'assets/images/logo/logo-colored.png'
             ), 
             "message" => (object) array(
                 "title" => $request->contact_title, 
                 "paragraphs" => array (
-                    "Sender: $request->contact_name<br/><br/>Phone No: $request->contact_phone<br/><br/>", 
+                    "Sender: $request->contact_name".(!empty($request->contact_phone) ? "<br/><br/>Phone No: $request->contact_phone" : "")."<br/><br/>", 
                     nl2br($request->contact_message)
                 ), 
                 "footer" => 'Copyright &copy; '.config('app.name').' '.date('Y')

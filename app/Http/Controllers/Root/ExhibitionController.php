@@ -63,7 +63,7 @@ class ExhibitionController extends Controller
         $media_type = FileManager::getMediaType($request->file('file'));
 
         $saved_file = ExhibitionItem::create([
-            "title" => $request->title,
+            "title" => !empty($request->title) ? $request->title : " ",
             "description" => '', 
             "exhibition_id" => $exhibition->id, 
             "size" => $request->size,
@@ -148,7 +148,7 @@ class ExhibitionController extends Controller
         if (empty($exhibition)) {
             return back()->with("error_message", "unable to find select exhibition");
         }
-        $exhibition_item = $exhibition_item->whereRaw("id = '{$item}' AND exhibition_id = '{$id}'")->get()->first();
+        $exhibition_item = $exhibition_item->where([["id",$item], ["exhibition_id", $id]])->get()->first();
         if (empty($exhibition_item)) {
             return back()->with("error_message", "unable to find select image");
         }
@@ -186,7 +186,21 @@ class ExhibitionController extends Controller
 
     }
     
-    public function destroy(Exhibition $exhibition)
+    public function destroy1(Exhibition $exhibition, ExhibitionItem $exhibition_item, $id)
+    {
+        $exhibition_item = $exhibition_item->where("id", $id)->get()->first();
+        // dd($exhibition_item);
+        if (empty($exhibition_item)) {
+            return back()->with("error_message", "unable to find select image");
+        }
+        
+        FileManager::deleteFile($exhibition_item->path);
+        ExhibitionItem::destroy($id);
+
+        return redirect('root/exhibition/'.$exhibition_item->exhibition_id)->with("success_message", $exhibition_item->media_type." file successfully deleted");
+    }
+    
+    public function destroy(Exhibition $exhibition, $id)
     {
         //
     }

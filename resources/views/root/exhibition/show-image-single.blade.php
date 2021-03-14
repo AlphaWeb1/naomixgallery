@@ -14,6 +14,7 @@
     <div class="col-sm-12">
         <div class="form-group">
             <button class="btn btn--sm btn--dark" data-toggle="modal" data-target="#editExhibitionItemModal"><span> Replace Image</span></button>
+            <a href="/root/exhibition-delete/delete-image/{{$exhibition_item->id}}" data-message="are you sure to delete this image" class="btn btn--sm btn--success confirmDialog d-none-em">Delete Image</a>
         </div>
     </div>
     <div class="col-sm-12">

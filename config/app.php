@@ -56,6 +56,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Contact Detail
+    |--------------------------------------------------------------------------
+    |
+    | This value is the logo of your application 
+    | by the translation service provider. You are free to set this value
+    | to any of the locales which will be supported by the application.
+    |
+    */
+
+    'contact' => [
+        'email' => 'amajoyeogbe.hofftech@gmail.com',
+        'phone' => '+2347030555625',
+        'address' => '1. Addo Road'
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |

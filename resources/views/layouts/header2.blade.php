@@ -48,7 +48,7 @@
                                     </ul>
 								</li>
 								<li class="nav__dropdown">
-                                    <a href="/artist" aria-haspopup="true">Meet The Artist</a>
+                                    <a href="/artist-profile" aria-haspopup="true">Meet The Artist</a>
                                     <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
                                     <ul class="nav__dropdown-menu">
                                         <li><a href="/artist-profile#profile">Artist Profile</a></li>

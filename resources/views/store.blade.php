@@ -39,8 +39,13 @@
                                 <h5 class="pt-8 pb-8">₦ {{ number_format($product->amount, 2, '.', ',') }}</h5>
                             @endif
                             <div class="project-1__text feed-content">{!! $product->description_decode !!}</div>
-                            <a href="#" class="read-more">
-                                <span class="read-more__text">Show Interest</span>
+                            <!-- <a href="#" class="read-more" info="{{json_encode($product)}}" data-toggle="modal" data-target="#showInterestModal">
+                                <span class="read-more__text">Drop a Message</span>
+                                <i class="ui-arrow-right read-more__icon"></i>
+                            </a> -->
+                            <a href="https://wa.me/2347030555625?text=I'm%20interested%20in%20buying%20{{$product->title}}&photos={{asset(config('app.storage_prefix').$product->path)}}"
+                             info="{{json_encode($product)}}">
+                                <span class="read-more__text">Drop a Message</span>
                                 <i class="ui-arrow-right read-more__icon"></i>
                             </a>
                         </div>
@@ -73,5 +78,6 @@
 
     @include('layouts.footer')
     @include('shared.preview-image-modal2')
+    <!-- @include('shared.show-interest-modal') -->
 </div>
 @endsection

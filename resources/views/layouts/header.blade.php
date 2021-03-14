@@ -47,7 +47,7 @@
                             </ul>
                         </li>
                         <li class="nav__dropdown">
-                            <a href="/artist" aria-haspopup="true">Meet The Artist</a>
+                            <a href="/artist-profile" aria-haspopup="true">Meet The Artist</a>
                             <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
                             <ul class="nav__dropdown-menu">
                                 <li><a href="/artist-profile#profile">Artist Profile</a></li>
@@ -111,7 +111,7 @@
                         <div class="socials">
                             <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_top"><i class="ui-twitter"></i></a>
                             <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_top"><i class="ui-facebook"></i></a>
-                            <a href="https://wa.me/+2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
+                            <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
                             <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     <div class="socials">
                         <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_top"><i class="ui-twitter"></i></a>
                         <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_top"><i class="ui-facebook"></i></a>
-                        <a href="https://wa.me/+2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
+                        <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
                         <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
                     </div>
 

@@ -48,6 +48,7 @@
         position: fixed;
         bottom: 0px;
         width: 100%;
+        z-index: 999999;
     }
     .filter-list a{
         color: #868686;
