@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="{{ asset(config('app.public_prefix').'assets/css/font-icons.css')}}" />
 <link rel="stylesheet" href="{{ asset(config('app.public_prefix').'assets/revolution/css/settings.css') }}" />
 <link rel="stylesheet" href="{{ asset(config('app.public_prefix').'assets/css/style.css') }}" />
+<link rel="stylesheet" href="{{ asset(config('app.public_prefix').'assets/css/montserrat.css') }}" />
 
 @if(in_array(request()->path(), array('root/gallery', 'root/gallery/'.( $gallery->id ?? ''), 
 'root/exhibitions', 'root/exhibition/'.( $exhibition->id ?? ''), 'root/murals', 'root/mural/'.( $mural->id ?? ''), 
@@ -25,6 +26,59 @@
 <link rel="apple-touch-icon" sizes="72x72" href="{{ asset(config('app.public_prefix').'assets/images/logo/icon-logo.png') }}">
 <link rel="apple-touch-icon" sizes="114x114" href="{{ asset(config('app.public_prefix').'assets/images/logo/icon-logo.png') }}">
 <style>
+    body{
+        font-family: 'Montserrat';
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat Bold';
+    }
+    .nav__menu > li > a {
+        font-family: "Montserrat Medium";
+    }
+    .wrapper-orange{
+        background: #ffb31a;
+        color: #ffffff;
+    }
+    .text-white {
+        color: #ffffff;
+    }
+    .btn--restored{
+        font-size: 18px !important;
+        padding: 15px 48px !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .btn--black {
+        background: #222222;
+        color: #ffffff !important;
+    }
+    .btn--black:hover {
+        background: inherit;
+        color: #222222 !important;
+    }
+
+    img.testimonial__image {
+        /* max-width: 200px; */
+        /* border: 0.2rem solid #fff; */
+        /* box-shadow: 0px 0px 7px 6px; */
+        /* border-radius: 50%; */
+        margin-top: 10px;
+        height: 100px;
+        width: 100px;
+        /* border-radius: 50%; */
+        
+    }
+    .testimonial__header {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .testimonial__company{
+        font-size: 14px;
+        font-style: italic;
+        margin-left: -18px;
+    }
     .py--15{
         padding-top: 15px;
         padding-bottom: 15px;
@@ -84,5 +138,15 @@
     }
     .custom-btn.custom-btn-sm {
         padding: 0.5rem;
+    }
+    @media(min-width: 768px){
+        ._large_screen_only{
+            display: inherit;
+        }
+    }
+    @media(max-width: 1280px){
+        ._large_screen_only{
+            display: none !important;
+        }
     }
 </style>

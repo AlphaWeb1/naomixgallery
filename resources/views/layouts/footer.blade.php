@@ -8,9 +8,9 @@
                     <div class="widget widget-about-us">
                         <!-- Logo -->
                         <a href="/home" class="logo-container flex-child">
-                            <img class="logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}}" 
-                            srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}} 1x, 
-                            {{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}} 2x" alt="logo">
+                            <img class="logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.png')}}" 
+                            srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.png')}} 1x, 
+                            {{asset(config('app.public_prefix').'assets/images/logo/logo-white.png')}} 2x" alt="logo">
                         </a>
                     </div>
                 </div> <!-- end logo -->

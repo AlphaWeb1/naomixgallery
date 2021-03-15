@@ -8,8 +8,8 @@
                 <div class="nav__header">
                     <!-- Logo -->
                     <a href="/home" class="logo-container flex-child">
-                        <img class="logo header-logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo.png')}}" 
-                        srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo.png')}} 1x, {{asset(config('app.public_prefix').'assets/images/logo/logo.png')}} 2x" alt="NaomixGallery">
+                        <img class="logo header-logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-colored-new.png')}}" 
+                        srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo.png')}} 1x, {{asset(config('app.public_prefix').'assets/images/logo/logo-colored-new.png')}} 2x" alt="NaomixGallery">
                     </a>
 
                     <!-- Mobile toggle -->
@@ -73,7 +73,7 @@
                                 <li><a href="/exhibitions">Exhibitions</a></li>
                             </ul>
                         </li>
-                        <li><a href="/store">New Store</a></li>
+                        <li><a href="/store">Store</a></li>
                         <li class="nav__dropdown d-none">
                             <a href="/exhibitions" aria-haspopup="true">Exhibitions</a>
                             <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>

@@ -236,6 +236,10 @@
 
     // Testimonials
     $('.slick-testimonials').slick({
+      autoplay:true,
+      infinite: true,
+      adaptiveHeight: true,
+      speed: 400,
       slidesToShow: 1
     });
 

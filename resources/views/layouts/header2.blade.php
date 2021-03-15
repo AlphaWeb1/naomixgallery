@@ -8,9 +8,9 @@
 						<div class="nav__header">
 							<!-- Logo -->
 							<a href="/home" class="logo-container flex-child">
-								<img class="logo header-logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-colored.svg')}}" 
-                                srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-colored.svg')}} 1x, 
-                                {{asset(config('app.public_prefix').'assets/images/logo/logo-colored.svg')}} 2x" alt="Naomix Gallery">
+								<img class="logo header-logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-colored-new.png')}}" 
+                                srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-colored-new.png')}} 1x, 
+                                {{asset(config('app.public_prefix').'assets/images/logo/logo-colored-new.png')}} 2x" alt="Naomix Gallery">
 							</a>
 
 							<!-- Mobile toggle -->
@@ -25,19 +25,7 @@
 						<!-- Navbar -->
 						<nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
 							<ul class="nav__menu">
-								<li class="nav__dropdown active">
-									<a href="/home" aria-haspopup="true">Home</a>
-									<i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
-									<ul class="nav__dropdown-menu">
-                                        <li><a href="/home#intro">Head's Up</a></li>
-                                        <li><a href="/home#offer">We Render You</a></li>
-                                        <li><a href="/home#gallery">Gallery Sample</a></li>
-                                        <li><a href="/home#exhibition">Latest In Exhibitions</a></li>
-                                        <li><a href="/home#store">Store in Brief</a></li>
-                                        <li><a href="/home#testimonials">Testimonials</a></li>
-                                        <li><a href="/home#contact">Get in Touch</a></li>
-									</ul>
-								</li>
+                                <li class="active"><a href="/home">Home</a></li>
 								<li class="nav__dropdown">
                                     <a href="/about" aria-haspopup="true">Naomix Gallery Ltd</a>
                                     <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
@@ -55,16 +43,6 @@
                                         <li><a href="/artist-profile#statement">Artist Statement</a></li>
                                     </ul>
 								</li>
-                                <li class="nav__dropdown d-none">
-                                    <a href="#" aria-haspopup="true">Pages</a>
-                                    <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="nav__dropdown-menu">
-                                        <li><a href="/about">About</a></li>
-                                        <li><a href="/services">Services</a></li>
-                                        <li><a href="/single-service">Single Service</a></li>
-                                        <li><a href="/contact">Contact</a></li>
-                                    </ul>
-                                </li>
                                 <li class="nav__dropdown">
                                     <a href="#" aria-haspopup="true">Collections</a>
                                     <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
@@ -74,22 +52,13 @@
                                         <li><a href="/exhibitions">Exhibitions</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/store">New Store</a></li>
-                                <li class="nav__dropdown d-none">
-                                    <a href="/exhibitions" aria-haspopup="true">Exhibitions</a>
-                                    <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="nav__dropdown-menu">
-                                        <li><a href="/exhibitions/2020-exhibition1">2020 Exhibition Place Holder 1</a></li>
-                                        <li><a href="/exhibitions/2020-exhibition2">2020 Exhibition Place Holder 2</a></li>
-                                        <li><a href="/exhibitions/2020-exhibition3">2020 Exhibition Place Holder 3</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="/store">Store</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul> <!-- end menu -->
                             
 							<div class="nav__phone nav__phone--mobile d-lg-none">
-								<span class="nav__phone-text social-phone" aria-label="phone" title="Call Us"><i class="ui-phone"></i></span>
-								<a href="tel:+2347030555625" class="nav__phone-number">+2347030555625</a>
+								<a href="tel:+2347030555625" target="__top"><span class="nav__phone-text social-phone" aria-label="phone" title="Call Us"><i class="ui-phone"></i></span> </a>
+								<a href="tel:+2347030555625" target="__top" class="nav__phone-number _large_screen_only">+2347030555625</a>
 							</div>
 
 							<div class="nav__socials nav__socials--mobile d-lg-none">
@@ -102,9 +71,9 @@
 							</div>
 						</nav> <!-- end nav-wrap -->
 
-						<div class="nav__phone nav--align-right d-none d-lg-block">
-							<span class="nav__phone-text social-phone" aria-label="phone" title="Call Us"><i class="ui-phone"></i></span>
-							<a href="tel:+2347030555625" class="nav__phone-number">+2347030555625</a>
+						<div class="nav__phone nav--align-right d-none d-lg-flex">
+						<a href="tel:+2347030555625" target="__top"><span class="nav__phone-text social-phone" aria-label="phone" title="Call Us"><i class="ui-phone"></i></span> </a>
+							<a href="tel:+2347030555625" target="__top" class="nav__phone-number _large_screen_only">+2347030555625</a>
 						</div>
 
 						<div class="nav__socials d-none d-lg-block">

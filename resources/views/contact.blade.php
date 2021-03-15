@@ -51,6 +51,16 @@
                 <!-- Contact Form -->
                 <form id="contact-form" class="contact-form material" method="post" action="/contact">
                     @csrf()
+                    @if(!empty($success_message))
+                    <div class="material__form-group form-group">
+                        <div class="alert alert-success">{{$success_message}}</div>
+                    </div>
+                    @endif
+                    @if(!empty($error_message))
+                    <div class="material__form-group form-group">
+                        <div class="alert alert-success">{{$error_message}}</div>
+                    </div>
+                    @endif
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- Name -->
@@ -99,9 +109,6 @@
                     </div>								
 
                     <input type="submit" class="btn btn--lg btn--color btn--button" value="Send Message">
-                    @if(!empty($success_message))
-                    <div id="msg" class="message">{{$success_message}}</div>
-                    @endif
                 </form>
             </div>
           </div>
