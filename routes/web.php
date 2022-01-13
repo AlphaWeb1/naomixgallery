@@ -55,7 +55,7 @@ Route::get('/unsubscribe-newsletter/{email}', 'App\Http\Controllers\HomeControll
 
 /** Admin Routes */
 Route::get('/root', 'App\Http\Controllers\Root\RootController@index');
-Route::get('/root/home', 'App\Http\Controllers\Root\RootController@index');\
+Route::get('/root/home', 'App\Http\Controllers\Root\RootController@index');
 
 Route::get('/root/gallery', 'App\Http\Controllers\Root\GalleryController@index');
 Route::post('/root/gallery', 'App\Http\Controllers\Root\GalleryController@store');
@@ -69,6 +69,7 @@ Route::patch('/root/exhibition/{id}', 'App\Http\Controllers\Root\ExhibitionContr
 Route::post('/root/exhibition/{id}', 'App\Http\Controllers\Root\ExhibitionController@store1');
 Route::get('/root/exhibition/{id}/{item}', 'App\Http\Controllers\Root\ExhibitionController@show1');
 Route::patch('/root/exhibition/{id}/{item}', 'App\Http\Controllers\Root\ExhibitionController@update1');
+Route::get('/root/exhibition-delete/delete-image/{id}', 'App\Http\Controllers\Root\ExhibitionController@destroy1');
 
 Route::get('/root/murals', 'App\Http\Controllers\Root\MuralController@index');
 Route::post('/root/murals', 'App\Http\Controllers\Root\MuralController@store');

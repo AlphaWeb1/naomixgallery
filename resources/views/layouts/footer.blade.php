@@ -8,9 +8,9 @@
                     <div class="widget widget-about-us">
                         <!-- Logo -->
                         <a href="/home" class="logo-container flex-child">
-                            <img class="logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}}" 
-                            srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}} 1x, 
-                            {{asset(config('app.public_prefix').'assets/images/logo/logo-white.svg')}} 2x" alt="logo">
+                            <img class="logo" src="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.png')}}" 
+                            srcset="{{asset(config('app.public_prefix').'assets/images/logo/logo-white.png')}} 1x, 
+                            {{asset(config('app.public_prefix').'assets/images/logo/logo-white.png')}} 2x" alt="logo">
                         </a>
                     </div>
                 </div> <!-- end logo -->
@@ -49,7 +49,7 @@
                         <div class="socials text-lg-center">
                             <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter font-27"></i></a>
                             <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook font-27"></i></a>
-                            <a href="https://wa.me/+2347030555625" class="social social-whatsapp d-none" aria-label="youtube" title="whatsapp" target="_blank"><i class="ui-whatsapp font-27"></i></a>
+                            <a href="https://wa.me/2347030555625" class="social social-whatsapp d-none" aria-label="youtube" title="whatsapp" target="_blank"><i class="ui-whatsapp font-27"></i></a>
                             <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram font-27"></i></a>
                         </div>
                     </div>

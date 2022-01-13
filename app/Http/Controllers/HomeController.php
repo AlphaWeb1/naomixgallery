@@ -9,6 +9,7 @@ use App\Models\Mural;
 use App\Models\Product;
 use App\Models\Exhibition;
 use App\Models\ExhibitionItem;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -26,39 +27,49 @@ class HomeController extends Controller
         $summary->exhibition = Exhibition::count();
         $summary->mural = Mural::count();
         
-        $exhibitions = Exhibition::latest()->take(3)->get();
-        if (!empty($exhibitions)) {
-            foreach ($exhibitions as $exhibition) {
-                $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id)->latest()->first();
-                $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id)->count();
-                $exhibition->description_decode = htmlspecialchars_decode($exhibition->description);
-            }
-        }
+        // $exhibitions = Exhibition::latest()->take(3)->get();
+        // if (!empty($exhibitions)) {
+        //     foreach ($exhibitions as $exhibition) {
+        //         $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id)->latest()->first();
+        //         $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id)->count();
+        //         $exhibition->description_decode = htmlspecialchars_decode($exhibition->description);
+        //     }
+        // }
+        $exhibition = Exhibition::latest()->first();
+        $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id)->latest()->first();
+        $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id)->count();
+        $exhibition->description_decode = htmlspecialchars_decode($exhibition->description);
 
-        $murals = Mural::latest()->take(3)->get();
-        foreach ($murals as $mural) {
-            $mural->description_decode = htmlspecialchars_decode($mural->description);
-        }
+        // $murals = Mural::latest()->take(3)->get();
+        // foreach ($murals as $mural) {
+        //     $mural->description_decode = htmlspecialchars_decode($mural->description);
+        // }
+        $mural = Mural::latest()->first();
+        $mural->description_decode = htmlspecialchars_decode($mural->description);
 
-        $galleries = (object) array("collection" => null);
-        $galleries->collection = Gallery::whereRaw("category = 'collection'")->latest()->first();
-        if (!empty($galleries->collection)) {
-            $galleries->collection->description_decode = htmlspecialchars_decode($galleries->collection->description);
-        }
+        // $galleries = (object) array("collection" => null);
+        // $galleries->collection = Gallery::whereRaw("category = 'collection'")->latest()->first();
+        // if (!empty($galleries->collection)) {
+        //     $galleries->collection->description_decode = htmlspecialchars_decode($galleries->collection->description);
+        // }
 
-        $galleries->portrait = Gallery::whereRaw("category = 'portrait'")->latest()->first();
-        if (!empty($galleries->portrait)) {
-            $galleries->portrait->description_decode = htmlspecialchars_decode($galleries->portrait->description);
-        }
+        // $galleries->portrait = Gallery::whereRaw("category = 'portrait'")->latest()->first();
+        // if (!empty($galleries->portrait)) {
+        //     $galleries->portrait->description_decode = htmlspecialchars_decode($galleries->portrait->description);
+        // }
 
-        $galleries->miniature = Gallery::whereRaw("category = 'miniature'")->latest()->first();
-        if (!empty($galleries->miniature)) {
-            $galleries->miniature->description_decode = htmlspecialchars_decode($galleries->miniature->description);
-        }
+        // $galleries->miniature = Gallery::whereRaw("category = 'miniature'")->latest()->first();
+        // if (!empty($galleries->miniature)) {
+        //     $galleries->miniature->description_decode = htmlspecialchars_decode($galleries->miniature->description);
+        // }
 
-        $galleries->abstract = Gallery::whereRaw("category = 'abstract'")->latest()->first();
-        if (!empty($galleries->abstract)) {
-            $galleries->abstract->description_decode = htmlspecialchars_decode($galleries->abstract->description);
+        // $galleries->abstract = Gallery::whereRaw("category = 'abstract'")->latest()->first();
+        // if (!empty($galleries->abstract)) {
+        //     $galleries->abstract->description_decode = htmlspecialchars_decode($galleries->abstract->description);
+        // }
+        $gallery =  Gallery::latest()->first();
+        if (!empty($gallery)) {
+            $gallery->description_decode = htmlspecialchars_decode($gallery->description);
         }
 
         $products = Product::latest()->take(3)->get();
@@ -66,7 +77,7 @@ class HomeController extends Controller
             $product->description_decode = htmlspecialchars_decode($product->description);
         }
 
-        return view('home', compact('summary', 'exhibitions', 'murals', 'galleries', 'products'));
+        return view('home', compact('summary', 'exhibition', 'mural', 'gallery', 'products'));
     }
 
     public function gallery($type = null)
@@ -134,7 +145,9 @@ class HomeController extends Controller
         foreach ($products as $product) {
             $product->description_decode = htmlspecialchars_decode($product->description);
         }
-        return view('store', compact("products"));
+        $categories = DB::select(DB::raw("SELECT DISTINCT category FROM products;"));
+        // dd($categories);
+        return view('store', compact("products", "categories"));
     }
 
     public function store_detail(Product $product, $id)
@@ -168,10 +181,12 @@ class HomeController extends Controller
         $validated = $request->validate([
             'contact_email' => ['required', 'string', 'email', 'max:255'],
             'contact_name' => ['required', 'string', 'min:2', 'max:255'],
-            'contact_phone' => ['required', 'string', 'max:11', 'regex:/^([0-9\s\-\+\(\)]*)$/'],
+            // 'contact_phone' => ['required', 'string', 'max:11', 'regex:/^([0-9\s\-\+\(\)]*)$/'],
             'contact_title' => ['required', 'string', 'max:20'],
             'contact_message' => ['required', 'string', 'max:255']
         ]);
+
+        // dd($request);
 
         $mail_data = (object) array(
             "send_from" => (object) array(
@@ -184,12 +199,12 @@ class HomeController extends Controller
             ),
             "logo" => (object) array(
                 "title" => 'Contact | '.config('app.name'),
-                "path" => config('app.url').config('app.port')."/".config('app.public_var').'assets/images/logos/logo.png'
+                "path" => config('app.url').config('app.port')."/".config('app.public_prefix').'assets/images/logo/logo-colored-new.png'
             ), 
             "message" => (object) array(
                 "title" => $request->contact_title, 
                 "paragraphs" => array (
-                    "Sender: $request->contact_name<br/><br/>Phone No: $request->contact_phone<br/><br/>", 
+                    "Sender: $request->contact_name".(!empty($request->contact_phone) ? "<br/><br/>Phone No: $request->contact_phone" : "")."<br/><br/>", 
                     nl2br($request->contact_message)
                 ), 
                 "footer" => 'Copyright &copy; '.config('app.name').' '.date('Y')

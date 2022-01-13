@@ -84,8 +84,24 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'amajoyeogbe.hofftech@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'LocalDev Test Mail'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global "Other Email" Address
+    |--------------------------------------------------------------------------
+    |
+    | You may wish for all e-mails sent by your application to be sent from
+    | the same address. Here, you may specify a name and address that is
+    | used globally for all e-mails that are sent by your application.
+    |
+    */
+
+    'others' => [
+        'contact' => 'abdulwasihitopee4real@gmail.com',
+        'info' => 'abdulwasihitopee4real@gmail.com'
     ],
 
     /*

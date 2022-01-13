@@ -20,9 +20,9 @@
           <div class="row">
             <div class="col-lg-4">
                 <div class="contact">
-                    <h5 class="contact__title">Melbourne Office</h5>
+                    <h5 class="contact__title">Contact Detail</h5>
                     <ul class="contact__items">
-                    <li class="contact__item">
+                    <li class="contact__item d-none">
                                             <span class="contact__item-label">Address:</span>
                         <address>Melbourne's GPO 350 Bourke St.<br>Melbourne VIC 3000, Australia</address>
                     </li>
@@ -40,7 +40,7 @@
                     <div class="socials">
                         <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter"></i></a>
                         <a href="https://www.facebook.com/Naomixgallery" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook"></i></a>
-                        <a href="#" class="social social-youtube d-none" aria-label="youtube" title="google plus" target="_blank"><i class="ui-youtube"></i></a>
+                        <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_blank"><i class="ui-whatsapp"></i></a>
                         <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram"></i></a>
                     </div>
                 </div>
@@ -51,54 +51,71 @@
                 <!-- Contact Form -->
                 <form id="contact-form" class="contact-form material" method="post" action="/contact">
                     @csrf()
+                    @if(!empty($success_message))
+                    <div class="material__form-group form-group">
+                        <div class="alert alert-success">{{$success_message}}</div>
+                    </div>
+                    @endif
+                    @if(!empty($error_message))
+                    <div class="material__form-group form-group">
+                        <div class="alert alert-success">{{$error_message}}</div>
+                    </div>
+                    @endif
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- Name -->
                             <div class="material__form-group form-group">
-                                <input type="text" name="name" id="name" class="form-input material__input" required="">
+                                <input type="text" name="contact_name" id="name" class="form-input material__input" required="">
                                 <label for="name" class="material__label">Name
                                     <abbr title="required" class="required">*</abbr>
                                 </label>
-                                <span class="material__underline"></span>
+                                @if ($errors->has('contact_name'))
+                                    <span class="material__underline">{{ $errors->first('contact_name') }}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <!-- Email -->
                             <div class="material__form-group form-group">
-                                <input type="email" name="email" id="email" class="form-input material__input" required="">
+                                <input type="email" name="contact_email" id="email" class="form-input material__input" required="">
                                 <label for="email" class="material__label">Email
                                     <abbr title="required" class="required">*</abbr>
                                 </label>
-                                <span class="material__underline"></span>
+                                @if ($errors->has('contact_email'))
+                                    <span class="material__underline">{{ $errors->first('contact_email') }}</span>
+                                @endif
                             </div>
                         </div>
                     </div>
 
                     <!-- Subject -->
                     <div class="material__form-group form-group">
-                        <input type="text" name="subject" id="subject" class="form-input material__input">
+                        <input type="text" name="contact_title" id="subject" class="form-input material__input">
                         <label for="subject" class="material__label">Subject
                         </label>
-                        <span class="material__underline"></span>
+                        @if ($errors->has('contact_title'))
+                            <span class="material__underline">{{ $errors->first('contact_title') }}</span>
+                        @endif
                     </div>							
 
                     <div class="material__form-group form-group">
-                        <textarea id="message" name="message" rows="7" class="form-input material__input" required=""></textarea>
+                        <textarea id="message" name="contact_message" rows="7" class="form-input material__input" required=""></textarea>
                         <label for="message" class="material__label">Message
                             <abbr title="required" class="required">*</abbr>
                         </label>
-                        <span class="material__underline"></span>
+                        @if ($errors->has('contact_message'))
+                            <span class="material__underline">{{ $errors->first('contact_message') }}</span>
+                        @endif
                     </div>								
 
-                    <input type="submit" class="btn btn--lg btn--color btn--button" value="Send Message" id="submit-message">
-                    <div id="msg" class="message"></div>
+                    <input type="submit" class="btn btn--lg btn--color btn--button" value="Send Message">
                 </form>
             </div>
           </div>
         </div>
     </section> <!-- end contact -->
     <!-- Google Map -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.9679844513716!2d120.97225391411865!3d14.60089968980224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca1023917729%3A0xfb3589db486b911!2sV.%20Tytana%20St%2C%20Binondo%2C%20Manila%2C%201006%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sng!4v1611965013561!5m2!1sen!2sng" style="width: 100%; min-height: 450;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.9679844513716!2d120.97225391411865!3d14.60089968980224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca1023917729%3A0xfb3589db486b911!2sV.%20Tytana%20St%2C%20Binondo%2C%20Manila%2C%201006%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sng!4v1611965013561!5m2!1sen!2sng" style="width: 100%; min-height: 450;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
     @include('layouts.footer')
 </div>
 @endsection

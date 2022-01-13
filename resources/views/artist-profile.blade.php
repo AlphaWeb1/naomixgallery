@@ -39,7 +39,7 @@
                                                 <a class="social social-instagram" href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" title="instagram" target="_top" aria-label="instagram">
                                                     <i class="ui-instagram"></i>
                                                 </a>
-                                                <a class="social social-whatsapp" href="https://wa.me/+2347030555625" title="whatsapp" target="_top" aria-label="whatsapp">
+                                                <a class="social social-whatsapp" href="https://wa.me/2347030555625" title="whatsapp" target="_top" aria-label="whatsapp">
                                                     <i class="ui-whatsapp"></i>
                                                 </a>
                                             </div>
@@ -70,7 +70,7 @@
                                                 <a href="tel:+2347030555625" class="social social-phone" aria-label="phone" title="Call Us" target="_top"><i class="ui-phone"></i>: +2347030555625</a>
                                             </li>
                                             <li>
-                                                <a href="https://wa.me/+2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i>: +2347030555625</a>
+                                                <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i>: +2347030555625</a>
                                             </li>
                                             <li>
                                                 <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i>: @naomixgallery</a>
@@ -110,26 +110,6 @@
                                             Naomi has her works collected both home and abroad and she is not ready to dowse it till she makes her mark and contributes positively to 
                                             her generation.
                                         </p>
-                            
-                                        <h4>Selected Exhibitions</h4>
-                                        <ol start="i">
-                                            <li>2020, Lagos Polo Club, Ikoyi Lagos.</li>
-                                            <li>2019, When Thought Becomes Reality, SNA October Rain Exhibition, Freedom Park Lagos Island.</li>
-                                            <li>2019, Gift of Blood, A Multi-Art Exhibition, Kulture Kode Arthub, Chocolate Mall,Wuse 2 Abuja.</li>
-                                            <li>2019, Uncovered Female Nigerian Artists, British Club British Village Inn, Abuja.</li>
-                                            <li>2018, Press For Progress, Women Move On, Nike Art Gallery, Ikate Lekki Lagos.</li>
-                                            <li>2017, Eko Art Expo “Lagos for All”, Eko Hotel and Suites, Lagos.</li>
-                                        </ol>
-                            
-                                        <!-- tags -->
-                                        <div class="entry__tags">
-                                            <i class="ui-tags"></i>
-                                            <span class="entry__tags-label">Tags:</span>
-                                            <a href="#" rel="tag">Art, </a>
-                                            <a href="/gallery" rel="tag">Gallery, </a>
-                                            <a href="/exhibitions" rel="tag">Exhibitions</a>
-                                        </div>
-                                        <!-- end tags -->
                             
                                     </div>
                                     <!-- end entry article -->

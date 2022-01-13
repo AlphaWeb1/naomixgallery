@@ -9,7 +9,7 @@
     <section class="page-title bg-dark-overlay text-center" style="background-image: url({{ asset(config('app.storage_prefix').$products[0]->path) }});">
         <div class="container">
             <div class="page-title__holder">
-                <h1 class="page-title__title">My Store</h1>
+                <h1 class="page-title__title">Store</h1>
                 <p class="page-title__subtitle d-none">For each project we establish relationships with partners</p>
             </div>
         </div>
@@ -39,8 +39,13 @@
                                 <h5 class="pt-8 pb-8">₦ {{ number_format($product->amount, 2, '.', ',') }}</h5>
                             @endif
                             <div class="project-1__text feed-content">{!! $product->description_decode !!}</div>
-                            <a href="#" class="read-more">
-                                <span class="read-more__text">Show Interest</span>
+                            <!-- <a href="#" class="read-more" info="{{json_encode($product)}}" data-toggle="modal" data-target="#showInterestModal">
+                                <span class="read-more__text">Drop a Message</span>
+                                <i class="ui-arrow-right read-more__icon"></i>
+                            </a> -->
+                            <a href="https://wa.me/2347030555625?text=I'm%20interested%20in%20buying%20{{$product->title}}&photos={{asset(config('app.storage_prefix').$product->path)}}"
+                             info="{{json_encode($product)}}" target="__top">
+                                <span class="read-more__text">Drop a Message</span>
                                 <i class="ui-arrow-right read-more__icon"></i>
                             </a>
                         </div>
@@ -73,5 +78,6 @@
 
     @include('layouts.footer')
     @include('shared.preview-image-modal2')
+    <!-- @include('shared.show-interest-modal') -->
 </div>
 @endsection

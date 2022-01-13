@@ -28,6 +28,13 @@
 
 <script type="text/javascript">
 
+    $(document).on('click', '.confirmDialog', function(){
+        let confirmDiag = confirm($(this).attr('data-message'));
+        if(!confirmDiag){
+            return false;
+        }
+    });
+
     $(document).on('click','.preview-image', function(){
         let dataTitle = $(this).attr('data-title'), dataSrc = $(this).attr('data-src'), dataSize = $(this).attr('data-size'), dataMedium = $(this).attr('data-medium'), 
         dataCompany = $(this).attr('data-company') ? $(this).attr('data-company') : '';

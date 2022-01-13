@@ -115,7 +115,7 @@ class MuralController extends Controller
             "title" => $request->title,
             "description" => $request->description, 
             "year" => $request->year,
-            "comany" => $request->company, 
+            "company" => $request->company, 
             "size" => $request->size,
             "media_type" => $mural->media_type,
             "path" => $mural->path 

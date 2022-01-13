@@ -43,7 +43,7 @@
                                 </li>
                             </ul>
                             <div class="mt-16 mb-16">
-                                <a href="#" class="btn custom-btn custom-btn-sm btn-dark">Show Interest</a>
+                                <a href="#" class="btn custom-btn custom-btn-sm btn-dark read-more">Drop a Message</a>
                             </div>
                             <h6 class="share-label d-none">Share:</h6>
                             <div class="socials d-none">
