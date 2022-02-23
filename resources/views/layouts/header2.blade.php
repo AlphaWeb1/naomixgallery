@@ -52,7 +52,7 @@
                                         <li><a href="/exhibitions">Exhibitions</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/store">Store</a></li>
+                                <li class="d-none"><a href="/store">Store</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul> <!-- end menu -->
                             
@@ -66,7 +66,7 @@
 									<a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter"></i></a>
 									<a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook"></i></a>
 									<a href="https://wa.me/+2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_blank"><i class="ui-whatsapp"></i></a>
-									<a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram"></i></a>
+									<a href="https://www.instagram.com/naomioyeniyi/" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram"></i></a>
 								</div>
 							</div>
 						</nav> <!-- end nav-wrap -->
@@ -81,7 +81,7 @@
 								<a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_top"><i class="ui-twitter"></i></a>
 								<a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_top"><i class="ui-facebook"></i></a>
 								<a href="https://wa.me/+2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
-								<a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
+								<a href="https://www.instagram.com/naomioyeniyi/" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
 							</div>
 						</div>
 

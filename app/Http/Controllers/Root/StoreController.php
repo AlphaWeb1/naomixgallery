@@ -129,4 +129,17 @@ class StoreController extends Controller
     {
         //
     }
+
+    public function destroy1(Product $product, $id)
+    {
+        $product = $product->where("id", $id)->get()->first();
+        if (empty($product)) {
+            return back()->with("error_message", "unable to find select image in product");
+        }
+        
+        FileManager::deleteFile($product->path);
+        Product::destroy($id);
+
+        return redirect('root/store')->with("success_message", "product {$product->title} was successfully deleted");
+    }
 }

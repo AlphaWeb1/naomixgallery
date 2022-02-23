@@ -61,7 +61,9 @@
                                     @endif
                                     <span>{{ $galleries->total() }}</span>
                                 </div>
-                                {{ $galleries->withQueryString()->links() }}
+                                <div class="page-right">
+                                    {{ $galleries->withQueryString()->links() }}
+                                </div>
                             </div>
                             @endif
                         </div>

@@ -123,4 +123,17 @@ class MuralController extends Controller
         return back()->with("success_message", "mural detail successfully updated");
     }
 
+    public function destroy1(Mural $mural, $id)
+    {
+        $mural = $mural->where("id", $id)->get()->first();
+        if (empty($mural)) {
+            return back()->with("error_message", "unable to find select image in gallery");
+        }
+        
+        FileManager::deleteFile($mural->path);
+        Mural::destroy($id);
+
+        return redirect('root/murals')->with("success_message", "{$mural->title} {$mural->year} {$mural->media_type} file was successfully deleted");
+    }
+
 }

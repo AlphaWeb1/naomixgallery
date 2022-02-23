@@ -32,7 +32,7 @@
                                 <li><a href="/home#offer">We Render You</a></li>
                                 <li><a href="/home#gallery">Gallery Sample</a></li>
                                 <li><a href="/home#exhibition">Latest In Exhibitions</a></li>
-                                <li><a href="/home#store">Store in Brief</a></li>
+                                <li class="d-none"><a href="/home#store">Store in Brief</a></li>
                                 <li><a href="/home#testimonials">Testimonials</a></li>
                                 <li><a href="/home#contact">Get in Touch</a></li>
                             </ul>
@@ -112,7 +112,7 @@
                             <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_top"><i class="ui-twitter"></i></a>
                             <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_top"><i class="ui-facebook"></i></a>
                             <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
-                            <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
+                            <a href="https://www.instagram.com/naomioyeniyi/" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
                         </div>
                     </div>
                 </nav> <!-- end nav-wrap -->
@@ -123,7 +123,7 @@
                         <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_top"><i class="ui-twitter"></i></a>
                         <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_top"><i class="ui-facebook"></i></a>
                         <a href="https://wa.me/2347030555625" class="social social-whatsapp" aria-label="whatsapp" title="whatsapp" target="_top"><i class="ui-whatsapp"></i></a>
-                        <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
+                        <a href="https://www.instagram.com/naomioyeniyi/" class="social social-instagram" aria-label="instagram" title="instagram" target="_top"><i class="ui-instagram"></i></a>
                     </div>
 
                     <span class="copyright">

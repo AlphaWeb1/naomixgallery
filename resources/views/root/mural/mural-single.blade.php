@@ -14,6 +14,7 @@
     <div class="col-sm-12">
         <div class="form-group">
             <button class="btn btn--sm btn--dark" data-toggle="modal" data-target="#muralModal"><span> Edit</span></button>
+            <a href="/root/mural/delete/{{$mural->id}}" data-message="are you sure to delete this image" class="btn btn--sm btn--success confirmDialog d-none-em">Delete</a>
         </div>
     </div>
     <div class="col-sm-12">

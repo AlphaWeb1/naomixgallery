@@ -21,7 +21,7 @@
                             <li><a href="/about">Naomix Gallery Ltd</a></li>
                             <li><a href="/exhibitions">Exhibitions</a></li>
                             <li><a href="/gallery">Gallery</a></li>
-                            <li><a href="/store">Store</a></li>
+                            <li class="d-none"><a href="/store">Store</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             <a href="https://twitter.com/NaomixGallery?s=09" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter font-27"></i></a>
                             <a href="https://www.facebook.com/Naomixgallery/" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook font-27"></i></a>
                             <a href="https://wa.me/2347030555625" class="social social-whatsapp d-none" aria-label="youtube" title="whatsapp" target="_blank"><i class="ui-whatsapp font-27"></i></a>
-                            <a href="https://instagram.com/naomixgallery?igshid=1va7oeih9xm11" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram font-27"></i></a>
+                            <a href="https://www.instagram.com/naomioyeniyi/" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram font-27"></i></a>
                         </div>
                     </div>
                 </div>

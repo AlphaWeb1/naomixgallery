@@ -106,7 +106,7 @@
 
     <!-- Store -->
     <section class="section-wrap pt-24 pb-0">
-        <div class="container">
+        <div class="container d-none">
             <div class="title-row mb-24">
                 <p class="subtitle d-none">Portfolio</p>
                 <h2 class="section-title">Store</h2>

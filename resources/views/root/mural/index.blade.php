@@ -43,17 +43,10 @@
             </div>
             @endforelse
             @if (!empty($murals) && method_exists($murals,'hasPages') && !empty($murals->total()))
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div style="padding: 12px;">Showing
-                    <span>{{ $murals->currentPage() == 1 ? '1' : ($murals->perPage() * ($murals->currentPage() - 1)) + 1 }}</span> -
-                    @if (($murals->perPage() * $murals->currentPage()) > $murals->total())
-                        <span>{{ $murals->total() }}</span> of
-                    @else
-                        <span>{{ $murals->currentPage() == 1 ? $murals->perPage() : ($murals->perPage() * ($murals->currentPage() - 1)) + count($murals) }}</span> of
-                    @endif
-                    <span>{{ $murals->total() }}</span>
+            <div class="col-sm-12 col-md-12 col-lg-12 pager-horizontal">
+                <div class="page-right">
+                    {{ $murals->withQueryString()->links() }}
                 </div>
-                {{ $murals->withQueryString()->links() }}
             </div>
             @endif
         </div>

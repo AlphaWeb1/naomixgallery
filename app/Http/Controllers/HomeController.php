@@ -141,6 +141,7 @@ class HomeController extends Controller
 
     public function store(Product $product)
     {
+        return redirect('/home'); // to disable store
         $products = $product->latest()->paginate(10);
         foreach ($products as $product) {
             $product->description_decode = htmlspecialchars_decode($product->description);
@@ -152,6 +153,7 @@ class HomeController extends Controller
 
     public function store_detail(Product $product, $id)
     {
+        return redirect('/home'); // to disable store
         $product = $product->where("id", $id)->get()->first();
         if (!empty($product)) {
             $product->description_decode = htmlspecialchars_decode($product->description);

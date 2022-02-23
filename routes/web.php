@@ -61,6 +61,7 @@ Route::get('/root/gallery', 'App\Http\Controllers\Root\GalleryController@index')
 Route::post('/root/gallery', 'App\Http\Controllers\Root\GalleryController@store');
 Route::get('/root/gallery/{id}', 'App\Http\Controllers\Root\GalleryController@show');
 Route::patch('/root/gallery/{id}', 'App\Http\Controllers\Root\GalleryController@update');
+Route::get('/root/gallery/delete/{id}', 'App\Http\Controllers\Root\GalleryController@destroy1');
 
 Route::get('/root/exhibitions', 'App\Http\Controllers\Root\ExhibitionController@index');
 Route::post('/root/exhibitions', 'App\Http\Controllers\Root\ExhibitionController@store');
@@ -75,11 +76,13 @@ Route::get('/root/murals', 'App\Http\Controllers\Root\MuralController@index');
 Route::post('/root/murals', 'App\Http\Controllers\Root\MuralController@store');
 Route::get('/root/mural/{id}', 'App\Http\Controllers\Root\MuralController@show');
 Route::patch('/root/mural/{id}', 'App\Http\Controllers\Root\MuralController@update');
+Route::get('/root/mural/delete/{id}', 'App\Http\Controllers\Root\MuralController@destroy1');
 
 Route::get('/root/store', 'App\Http\Controllers\Root\StoreController@index');
 Route::post('/root/store', 'App\Http\Controllers\Root\StoreController@store');
 Route::get('/root/store/{id}', 'App\Http\Controllers\Root\StoreController@show');
 Route::patch('/root/store/{id}', 'App\Http\Controllers\Root\StoreController@update');
+Route::get('/root/store/delete/{id}', 'App\Http\Controllers\Root\StoreController@destroy1');
 
 /** Client Routes */
 Route::get('/dashboard', function(){

@@ -52,17 +52,10 @@
             </div>
             @endforelse
             @if (!empty($galleries) && method_exists($galleries,'hasPages') && !empty($galleries->total()))
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div style="padding: 12px;">Showing
-                    <span>{{ $galleries->currentPage() == 1 ? '1' : ($galleries->perPage() * ($galleries->currentPage() - 1)) + 1 }}</span> -
-                    @if (($galleries->perPage() * $galleries->currentPage()) > $galleries->total())
-                        <span>{{ $galleries->total() }}</span> of
-                    @else
-                        <span>{{ $galleries->currentPage() == 1 ? $galleries->perPage() : ($galleries->perPage() * ($galleries->currentPage() - 1)) + count($galleries) }}</span> of
-                    @endif
-                    <span>{{ $galleries->total() }}</span>
+            <div class="col-sm-12 col-md-12 col-lg-12 pager-horizontal">
+                <div class="page-right">
+                    {{ $galleries->withQueryString()->links() }}
                 </div>
-                {{ $galleries->withQueryString()->links() }}
             </div>
             @endif
         </div>

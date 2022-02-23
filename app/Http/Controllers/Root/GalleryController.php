@@ -129,4 +129,17 @@ class GalleryController extends Controller
         return back()->with("success_message", "gallery file successfully updated");
     }
 
+    public function destroy1(Gallery $gallery, $id)
+    {
+        $gallery = $gallery->where("id", $id)->get()->first();
+        if (empty($gallery)) {
+            return back()->with("error_message", "unable to find select image in gallery");
+        }
+        
+        FileManager::deleteFile($gallery->path);
+        Gallery::destroy($id);
+
+        return redirect('root/gallery')->with("success_message", "{$gallery->title} {$gallery->media_type} file was successfully deleted");
+    }
+
 }
