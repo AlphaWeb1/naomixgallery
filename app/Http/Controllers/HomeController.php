@@ -28,24 +28,24 @@ class HomeController extends Controller
         $summary->mural = Mural::count();
         
         // $exhibitions = Exhibition::latest()->take(3)->get();
-        // if (!empty($exhibitions)) {
-        //     foreach ($exhibitions as $exhibition) {
-        //         $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id)->latest()->first();
-        //         $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id)->count();
-        //         $exhibition->description_decode = htmlspecialchars_decode($exhibition->description);
-        //     }
-        // }
-        $exhibition = Exhibition::latest()->first();
-        $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id)->latest()->first();
-        $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id)->count();
-        $exhibition->description_decode = htmlspecialchars_decode($exhibition->description);
+        // $exhibitions->map(function ($exhibition){
+        //     $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id)->latest()->first();
+        //     $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id)->count();
+        //     $exhibition->description_decode = htmlspecialchars_decode($exhibition->description);
+
+        //     return $exhibition;
+        // });
+        $exhibition = Exhibition::latest()->first() ?? (object) [];
+        $exhibition->first_item = ExhibitionItem::where("exhibition_id", $exhibition->id ?? 0)->latest()->first() ?? (object) [];
+        $exhibition->images = ExhibitionItem::where("exhibition_id", $exhibition->id ?? 0)->count();
+        $exhibition->description_decode = htmlspecialchars_decode($exhibition->description ?? '');
 
         // $murals = Mural::latest()->take(3)->get();
         // foreach ($murals as $mural) {
         //     $mural->description_decode = htmlspecialchars_decode($mural->description);
         // }
-        $mural = Mural::latest()->first();
-        $mural->description_decode = htmlspecialchars_decode($mural->description);
+        $mural = Mural::latest()->first() ?? (object) [];
+        $mural->description_decode = htmlspecialchars_decode($mural->description ?? '');
 
         // $galleries = (object) array("collection" => null);
         // $galleries->collection = Gallery::whereRaw("category = 'collection'")->latest()->first();
@@ -67,12 +67,10 @@ class HomeController extends Controller
         // if (!empty($galleries->abstract)) {
         //     $galleries->abstract->description_decode = htmlspecialchars_decode($galleries->abstract->description);
         // }
-        $gallery =  Gallery::latest()->first();
-        if (!empty($gallery)) {
-            $gallery->description_decode = htmlspecialchars_decode($gallery->description);
-        }
+        $gallery =  Gallery::latest()->first() ?? (object) [];
+            $gallery->description_decode = htmlspecialchars_decode($gallery->description ?? '');
 
-        $products = Product::latest()->take(3)->get();
+        $products = Product::latest()->take(3)->get() ?? [];
         foreach ($products as $product) {
             $product->description_decode = htmlspecialchars_decode($product->description);
         }
